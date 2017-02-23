@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -19,7 +19,20 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
+
+# Use semantic UI as css framework
+gem 'less-rails-semantic_ui', '~> 2.2'
+gem 'autoprefixer-rails', '~> 6.7'
+
+# Use simple form for form management
+gem 'simple_form', '~> 3'
+
+# HAML FTW!
+gem 'haml-rails'
+
+# Traiblazer for "good code"
+gem 'trailblazer-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -47,6 +60,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
