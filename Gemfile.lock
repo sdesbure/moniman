@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/MustafaZain/less-rails
+  revision: 31d48a0716b89966b787148eb9da54c495f10825
+  specs:
+    less-rails (2.8.1)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
+
+GIT
+  remote: https://github.com/dangerous/Semantic-UI-Rails-LESS.git
+  revision: 4f0b1c53987f6c82821d107c3021fdf45783bc52
+  specs:
+    less-rails-semantic_ui (2.2.6.0)
+      less-rails (>= 2.6.0, < 2.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,6 +82,33 @@ GEM
       declarative-option (< 0.2.0)
       representable (>= 2.4.0, <= 3.1.0)
       uber (< 0.2.0)
+    dry-configurable (0.6.1)
+      concurrent-ruby (~> 1.0)
+    dry-container (0.6.0)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1, >= 0.1.3)
+    dry-core (0.2.4)
+      concurrent-ruby (~> 1.0)
+    dry-equalizer (0.2.0)
+    dry-logic (0.4.1)
+      dry-container (~> 0.2, >= 0.2.6)
+      dry-core (~> 0.2)
+      dry-equalizer (~> 0.2)
+    dry-types (0.9.4)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.3)
+      dry-core (~> 0.2, >= 0.2.1)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.4, >= 0.4.0)
+      inflecto (~> 0.0.0, >= 0.0.2)
+    dry-validation (0.10.5)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1, >= 0.1.3)
+      dry-core (~> 0.2, >= 0.2.1)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.4, >= 0.4.0)
+      dry-types (~> 0.9, >= 0.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.17)
@@ -84,6 +128,7 @@ GEM
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.8.1)
+    inflecto (0.0.2)
     jbuilder (2.6.2)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -93,13 +138,6 @@ GEM
       thor (>= 0.14, < 2.0)
     less (2.6.0)
       commonjs (~> 0.2.7)
-    less-rails (2.7.1)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
-    less-rails-semantic_ui (2.2.6.0)
-      less-rails (>= 2.6.0, < 2.8.0)
     libv8 (3.16.14.17)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -252,10 +290,12 @@ DEPENDENCIES
   autoprefixer-rails (~> 6.7)
   byebug
   coffee-rails (~> 4.2)
+  dry-validation
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
-  less-rails-semantic_ui (~> 2.2)
+  less-rails!
+  less-rails-semantic_ui!
   listen (~> 3.0.5)
   pg (~> 0.18)
   pry

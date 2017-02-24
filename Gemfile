@@ -22,7 +22,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 
 # Use semantic UI as css framework
-gem 'less-rails-semantic_ui', '~> 2.2'
+# Using github forked versions in order to make it work with rails 5
+gem 'less-rails', git: 'https://github.com/MustafaZain/less-rails'
+gem 'less-rails-semantic_ui', git: 'https://github.com/dangerous/Semantic-UI-Rails-LESS.git'
 gem 'autoprefixer-rails', '~> 6.7'
 
 # Use simple form for form management
@@ -33,6 +35,7 @@ gem 'haml-rails'
 
 # Traiblazer for "good code"
 gem 'trailblazer-rails'
+gem 'dry-validation'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
