@@ -58,6 +58,10 @@ development:
 test:
   <<: *default
   database: moniman_test
+  port: <%= ENV.fetch("POSTGRES_PORT") { 5432 } %>
+  host: <%= ENV.fetch("POSTGRES_HOST") { 'localhost' } %>
+  username: <%= ENV.fetch("PSQL_USER") { Rails.application.secrets.postgres_user } %>
+  password: <%= ENV.fetch("PSQL_PASSWD") { Rails.application.secrets.postgres_passwd } %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
