@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  isin: MyString
+  fund_url: MyString
+  category: MyString
+  index: MyString
+  investment_style: MyString
+
+two:
+  name: MyString
+  isin: MyString
+  fund_url: MyString
+  category: MyString
+  index: MyString
+  investment_style: MyString

@@ -1,0 +1,2 @@
+class UnitValue < ApplicationRecord
+end
