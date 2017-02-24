@@ -35,8 +35,5 @@ build:
           name: db setup
           code: RAILS_ENV=test bundle exec rake db:setup
         - script:
-          name: db prepare
-          code: bundle exec rake db:test:prepare
-        - script:
           name: rspec
           code: bundle exec rspec
