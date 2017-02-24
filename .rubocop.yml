@@ -40,3 +40,7 @@ Style/Documentation:
 Style/BlockComments:
   Exclude:
     - 'spec/spec_helper.rb'
+
+# Traiblazer use a lot of lambda calls as class names are self expressive
+Style/LambdaCall:
+  Enabled: No
