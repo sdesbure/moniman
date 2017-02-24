@@ -13,5 +13,30 @@ Style/FileName:
   Exclude:
     - Gemfile
 
+# With trailblazer, we have a lot of nested classes so prefer compact mode
+# application.rb doesn't work in compact mode
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+  Exclude:
+    - 'config/application.rb'
+
+# Configuration file so "normal" to have a lot of lines
+Metrics/BlockLength:
+  Exclude:
+    - config/initializers/simple_form.rb
+
+# well, we don't really need doc for that no?
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'app/controllers/application_controller.rb'
+    - 'app/helpers/application_helper.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/application_record.rb'
+    - 'db/migrate/20170224092618_create_unit_values.rb'
+
+# Big comment in spec helper for a classical way of configuration
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'

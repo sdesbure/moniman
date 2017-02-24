@@ -6,7 +6,8 @@ SimpleForm.setup do |config|
   # stack. The options given below are used to wrap the
   # whole input.
   config.wrappers :default, class: :input,
-    hint_class: :field_with_hint, error_class: :field_with_errors do |b|
+                            hint_class: :field_with_hint,
+                            error_class: :field_with_errors do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
@@ -45,9 +46,8 @@ SimpleForm.setup do |config|
     b.use :error, wrap_with: { tag: :span, class: :error }
   end
 
-
-
-  config.wrappers :semantic, tag: 'div', class: "field", error_class: 'error', hint_class: 'with_hint' do |b|
+  config.wrappers :semantic, tag: 'div', class: 'field', error_class: 'error',
+                             hint_class: 'with_hint' do |b|
     b.use :html5
     b.use :placeholder
     b.use :label_input
@@ -55,40 +55,45 @@ SimpleForm.setup do |config|
     b.optional :pattern
     b.optional :min_max
     b.use :hint,  wrap_with: { tag: 'div', class: 'hint' }
-    b.use :error, wrap_with: { tag: 'div', class: 'ui red pointing above label error' }
-
+    b.use :error, wrap_with: { tag: 'div',
+                               class: 'ui red pointing above label error' }
   end
 
-  config.wrappers :semantic_checkbox, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
+  config.wrappers :semantic_checkbox, tag: 'div', class: 'inline field',
+                                      error_class: 'error',
+                                      hint_class: 'with_hint' do |b|
     b.use :html5
     b.wrapper tag: 'div', class: 'ui checkbox' do |input|
       input.use :input
-      input.wrapper tag: 'label' do |box| end
+      input.wrapper tag: 'label' do |box|
+      end
     end
     b.use :label
   end
 
-  config.wrappers :semantic_checkbox_slider, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
+  config.wrappers :semantic_checkbox_slider, tag: 'div', class: 'inline field',
+                                             error_class: 'error',
+                                             hint_class: 'with_hint' do |b|
     b.use :html5
     b.wrapper tag: 'div', class: 'ui slider checkbox' do |input|
       input.use :input
-      input.wrapper tag: 'label' do |slide| end
+      input.wrapper tag: 'label' do |slide|
+      end
     end
     b.use :label
   end
 
-  config.wrappers :semantic_checkbox_toggle, tag: 'div', class: "inline field", error_class: 'error', hint_class: 'with_hint' do |b|
+  config.wrappers :semantic_checkbox_toggle, tag: 'div', class: 'inline field',
+                                             error_class: 'error',
+                                             hint_class: 'with_hint' do |b|
     b.use :html5
     b.wrapper tag: 'div', class: 'ui toggle checkbox' do |input|
       input.use :input
-      input.wrapper tag: 'label' do |slide| end
+      input.wrapper tag: 'label' do |slide|
+      end
     end
     b.use :label
   end
-
-
-
-
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :semantic
 
@@ -121,10 +126,12 @@ SimpleForm.setup do |config|
   # Series of attempts to detect a default value method for collection.
   # config.collection_value_methods = [ :id, :to_s ]
 
-  # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
+  # You can wrap a collection of radio/check boxes in a pre-defined tag,
+  # defaulting to none.
   # config.collection_wrapper_tag = nil
 
-  # You can define the class to use on all collection wrappers. Defaulting to none.
+  # You can define the class to use on all collection wrappers.
+  # Defaulting to none.
   # config.collection_wrapper_class = nil
 
   # You can wrap each item in a collection of radio/check boxes with a tag,
@@ -139,7 +146,7 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  #config.label_class = 'control-label'
+  # config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
   config.default_form_class = 'ui form'
@@ -150,11 +157,14 @@ SimpleForm.setup do |config|
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true
 
-  # Tell browsers whether to use the native HTML5 validations (novalidate form option).
-  # These validations are enabled in SimpleForm's internal config but disabled by default
-  # in this configuration, which is recommended due to some quirks from different browsers.
-  # To stop SimpleForm from generating the novalidate option, enabling the HTML5 validations,
-  # change this configuration to true.
+  # Tell browsers whether to use the native HTML5 validations (novalidate form
+  # option).
+  # These validations are enabled in SimpleForm's internal config but disabled
+  # by default.
+  # in this configuration, which is recommended due to some quirks from
+  # different browsers.
+  # To stop SimpleForm from generating the novalidate option, enabling the HTML5
+  # validations, change this configuration to true.
   config.browser_validations = false
 
   # Collection of methods to detect if a file type was given.
@@ -166,7 +176,8 @@ SimpleForm.setup do |config|
   # config.input_mappings = { /count/ => :integer }
 
   # Custom wrappers for input types. This should be a hash containing an input
-  # type as key and the wrapper that will be used for all inputs with specified type.
+  # type as key and the wrapper that will be used for all inputs with specified
+  # type.
   # config.wrapper_mappings = { string: :prepend }
 
   # Default priority for time_zone inputs.
