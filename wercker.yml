@@ -32,15 +32,5 @@ build:
           name: environment
           code: env
         - script:
-          name: "Wait for PostgreSQL connection"
-          code: |
-            while ! nc -q 1 $POSTGRES_PORT_5432_TCP_ADDR $POSTGRES_PORT_5432_TCP_PORT
-            </dev/null; do sleep 3; done
-        - script:
-          name: "Wait for influxDB connection"
-          code: |
-            while ! nc -q 1 $INFLUXDB_PORT_8086_TCP_ADDR $INFLUXDB_PORT_8086_TCP_PORT
-            </dev/null; do sleep 3; done
-        - script:
             name: rspec
             code: bundle exec rspec
