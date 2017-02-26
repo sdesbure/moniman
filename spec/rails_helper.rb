@@ -5,9 +5,6 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if
   Rails.env.production?
 
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
-
 if ENV['COVERALLS_REPO_TOKEN']
   require 'coveralls'
   Coveralls.wear!('rails')
