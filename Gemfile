@@ -92,6 +92,7 @@ group :development do
   # linting tools
   gem 'haml-lint', require: false
   gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :test do

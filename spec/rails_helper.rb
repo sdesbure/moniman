@@ -5,16 +5,19 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if
   Rails.env.production?
 
-if ENV['COVERALLS_REPO_TOKEN']
-  require 'coveralls'
-  Coveralls.wear!('rails')
-end
+require 'coveralls' if ENV['COVERALLS_REPO_TOKEN']
 
 require 'simplecov'
 # save to CircleCI's artifacts directory if we're on CircleCI
 if ENV['CIRCLE_ARTIFACTS']
   dir = File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage')
   SimpleCov.coverage_dir(dir)
+  if ENV['COVERALLS_REPO_TOKEN']
+    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+      SimpleCov::Formatter::HTMLFormatter,
+      Coveralls::SimpleCov::Formatter
+      ]
+  end
 end
 
 if ENV['WERCKER_REPORT_ARTIFACTS_DIR']

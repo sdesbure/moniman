@@ -1,8 +1,12 @@
 language: ruby
 
+cache: bundler
+
 before_script:
   - bundle exec rake db:setup
   - bundle exec rake db:test:prepare
-script: bundle exec rake spec
+script:
+  - bundle exec rubocop 
+  - bundle exec rake spec
 after_success:
   - bundle exec codeclimate-test-reporter

@@ -1,3 +1,4 @@
+require: rubocop-rspec
 inherit_from: .rubocop_todo.yml
 
 AllCops:
@@ -8,6 +9,9 @@ AllCops:
   Exclude:
     - db/schema.rb
     - bin/*
+    - vendor/**/*
+    - db/migrate/*
+
 
 Style/FileName:
   Exclude:
@@ -24,6 +28,7 @@ Style/ClassAndModuleChildren:
 Metrics/BlockLength:
   Exclude:
     - config/initializers/simple_form.rb
+    - spec/**/*
 
 # well, we don't really need doc for that no?
 Style/Documentation:
@@ -43,4 +48,8 @@ Style/BlockComments:
 
 # Traiblazer use a lot of lambda calls as class names are self expressive
 Style/LambdaCall:
+  Enabled: No
+
+# Trailblazer uses class names that don't really follow RSPEC code style
+RSpec/FilePath:
   Enabled: No
