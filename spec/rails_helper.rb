@@ -4,6 +4,28 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if
   Rails.env.production?
+
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+
+if ENV['COVERALLS_REPO_TOKEN']
+  require 'coveralls'
+  Coveralls.wear!('rails')
+end
+
+require 'simplecov'
+# save to CircleCI's artifacts directory if we're on CircleCI
+if ENV['CIRCLE_ARTIFACTS']
+  dir = File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage')
+  SimpleCov.coverage_dir(dir)
+end
+
+if ENV['WERCKER_REPORT_ARTIFACTS_DIR']
+  dir = File.join(ENV['WERCKER_REPORT_ARTIFACTS_DIR'], 'coverage')
+  SimpleCov.coverage_dir(dir)
+end
+
+SimpleCov.start 'rails'
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
