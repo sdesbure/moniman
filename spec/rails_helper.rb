@@ -6,9 +6,15 @@ abort('The Rails environment is running in production mode!') if
   Rails.env.production?
 
 require 'simplecov'
+
 if ENV['COVERALLS_REPO_TOKEN']
   require 'coveralls'
   SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+end
+
+if ENV['CODECOV']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
 if ENV['WERCKER_REPORT_ARTIFACTS_DIR']

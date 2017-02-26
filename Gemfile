@@ -42,6 +42,9 @@ gem 'haml-rails'
 gem 'dry-validation'
 gem 'trailblazer-rails'
 
+# Use InfluxDB to store unit value net asset value timeseries
+# gem 'influxdb-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -100,6 +103,7 @@ group :test do
   gem 'rake'
 
   # code coverture
+  gem 'codecov', require: false
   gem 'coveralls', require: false
   gem 'codeclimate-test-reporter', require: nil
   gem 'simplecov', require: false
