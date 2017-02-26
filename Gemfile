@@ -100,6 +100,7 @@ group :test do
   gem 'rake'
 
   # code coverture
+  gem 'coveralls', require: false
   gem 'codeclimate-test-reporter', require: nil
   gem 'simplecov', require: false
 end
